@@ -1,4 +1,6 @@
 // Code to define and export the Employee class
+
+//Employee constructors
 class Employee {
     constructor(name, id, email) {
         this.name = name;
@@ -6,6 +8,7 @@ class Employee {
         this.email = email;
     }
 
+    //return functions
     getName() {
         return this.name; 
     }
