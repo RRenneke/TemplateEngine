@@ -54,6 +54,6 @@ In addition to Employee's properties and methods, Intern will also have:
 <li>In terminal, complete an npm i</li>
 <li>Run node app.js</li>
 <li>Answer the terminal questions</li>
-![Terminal questions](/assets/templateEngineConsole.pgn)
+![Terminal questions](/Assets/templateEngineConsole.png)
 <li>View the HTML page</li>
 <ol>
