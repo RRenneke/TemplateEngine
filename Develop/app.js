@@ -10,23 +10,23 @@ const render = require("./lib/htmlRender");
 
 const employeeList = [];
 
-// Write code to use inquirer to gather information about the development team members,
+// Code will use inquirer to gather information about each team memeber and create an object
 // and to create objects for each team member (using the correct classes as blueprints!)
 const questions = [
     {
         type: "input",
         name: "name",
-        message: "Please enter employee name:"
+        message: "What is the employee's first and last name?"
     },
     {
         type: "input",
         name: "id",
-        message: "Please enter employee ID number:"
+        message: "What is their employee ID number?"
     },
     {
         type: "input",
         name: "email",
-        message: "Please enter employee e-mail address:"
+        message: "What is their e-mail address?"
     },
     {
         type: "list",
@@ -42,31 +42,36 @@ const questions = [
             name: "Intern"
         }]
     },
+    //only ask a manager
     {
         type: "input",
         name: "officeNumber",
-        message: "Please enter manager's office number:",
+        message: "What is their office number?",
         when: function(answers){
             return answers.role === "Manager";
         }
     },
+    //only ask a engineer
     {
         type: "input",
         name: "github",
-        message: "Please enter engineer's github username:",
+        message: "What is their Github username?",
         when: function(answers){
             return answers.role === "Engineer";
         }
     },
+    //only ask an intern
     {
         type: "input",
         name: "school",
-        message: "What is the name of the school you're currently attending?",
+        message: "What school are they attending?",
         when: function(answers){
             return answers.role === "Intern";
         }
     }
 ];
+
+//pull respones for each person and push them to the main employee list to create a team
 function promptUser() {
 
    inquirer.prompt(questions).then(function(response) {
@@ -86,6 +91,7 @@ function promptUser() {
    });
 };
 
+//function to write teh html file with the new team
 function newEmployee() {
     inquirer.prompt([
         {
@@ -107,4 +113,5 @@ function newEmployee() {
     })
 }
 
+//call to start the promts
 promptUser();
