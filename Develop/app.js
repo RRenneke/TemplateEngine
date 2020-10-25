@@ -91,7 +91,7 @@ function promptUser() {
    });
 };
 
-//function to write teh html file with the new team
+//function to write the html file with the new team
 function newEmployee() {
     inquirer.prompt([
         {
